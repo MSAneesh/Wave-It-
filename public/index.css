@@ -1,0 +1,46 @@
+@keyframes example{
+    from{background-color: white;}
+    to{background-color: black;}
+}
+@keyframes waveit{
+    from{top:100%;}
+    to{top:40%}
+}
+    
+
+
+body{
+   /* background-color:orange;*/
+   
+   animation-name: example;
+   animation-duration:4s;
+   background-color: black;
+}
+.one{
+    position: absolute;
+    animation-name: waveit;
+    animation-duration: 2s;
+    left:38%;
+    font-size: 100px;
+    color: white;
+    top: 40%;
+    
+}
+#bo{
+    position: absolute;
+    top:60%;
+    left:47%;
+    opacity: 50%;
+    color: white;
+
+}
+
+#bo:hover{
+    opacity:100%;
+
+    
+}
+
+.function{
+    width:120px;
+}

@@ -1,0 +1,184 @@
+<%- include('partials/header'); -%>
+<div class="container">
+<header style="text-align:center;color: white;font-size: 70px;" >SIMULATE</header>
+<div>
+
+</div>
+<br><br>
+
+<div class="row">
+    
+    
+
+    
+    
+    <div class="col-lg-6">
+        <div class="card mb-3">
+            <canvas id="myChart">
+
+            </canvas>
+            
+            <div class="card-body" style="background-color:aqua;" >
+                <h5 class="card-title">Select a function</h5>
+                <p class="card-text">Enter your values and visualise the curve</p>
+                <form class="forms">
+                <button class="function btn btn-primary" id="sine">sine</button>
+                <button class="function btn btn-primary" id="cos">cos</button>
+                <button class="function btn btn-primary" id="saw">saw-tooth</button>
+                <button class="function btn btn-primary" id="ramp">ramp</button>
+            </form>
+
+              
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    <div class="col-lg-6">
+        <div class="card mb-3">
+            <canvas id="myCharttwo">
+
+            </canvas>
+            
+            <div class="card-body " style="background-color:aqua;">
+              <h5 class="card-title">Select a function</h5>
+              <p class="card-text">Enter your values and visualise the curve</p>
+              
+              <form class="forms">
+                <button class="function btn btn-primary">sine</button>
+                <button class="function btn btn-primary">cos</button>
+                <button class="function btn btn-primary">saw-tooth</button>
+                <button class="function btn btn-primary">ramp</button>
+            </form>
+              
+            </div>
+        
+      </div>
+        
+    </div>
+    
+    
+</div>
+
+</div>
+
+
+<script>
+    const openform=document.getElementsByClassName("forms")
+   console.log(openform)
+   const cardcontent=document.getElementsByClassName("card-body")
+   console.log(cardcontent)
+   const form_in=document.createElement("form")
+
+   Array.from(openform).forEach(function(form){
+    const sine=document.getElementById("sine")
+    console.log(sine)
+       form.addEventListener("submit",function(e){
+           e.preventDefault();
+           form_in.innerHTML=""
+           const subheading1=document.createElement("h5")
+           const subheading2=document.createElement("h5")
+           const input1=document.createElement("input");
+           const input2=document.createElement("input");
+           const button=document.createElement("button")
+
+
+           
+           form_in.setAttribute("class","subform")
+           subheading1.textContent="Enter the coefficient of x"
+           subheading2.textContent="Enter the phase angle"
+           button.textContent="Submit" 
+          
+          
+
+           form_in.append(subheading1)
+           form_in.append(input1)
+           form_in.append(subheading2)
+           form_in.append(input2)
+           form_in.append(button)
+           console.log(form_in)
+
+           cardcontent[0].append(form_in)
+
+
+        
+
+           
+       })
+   })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    let myChart=document.getElementById("myChart").getContext("2d")
+
+    let wave=new Chart(myChart,{
+        type:'line',
+        
+        
+        data:{
+        labels:["w1","w2","w3","w4"],
+            
+        datasets:[{
+            fill:false,
+            label:"f(x)",
+            data:[10,20,56,45],
+            backgroundColor:'white',
+            }],
+        
+        },
+        options:[],
+        
+    })
+
+    let myCharttwo=document.getElementById("myCharttwo").getContext("2d")
+    let wavetwo=new Chart(myCharttwo,{
+        type:'line',
+        data:{
+            labels:[10,20,30,40,50],
+
+            datasets:[{
+                fill:false,
+                label:"f(x)",
+                data:[34,23,56,78],
+                backgroundColor:'white'
+            }]
+        }
+    })
+
+    
+ /*   Array.from(cardcolor).forEach(function(card){
+        card.addEventListener("mouseover",function(e){
+           
+            e.target.style.backgroundColor="aqua";
+            console.log(e)
+
+            
+
+
+            })
+            
+    })
+    */
+   
+   
+   
+   
+   
+
+   
+
+</script>
+
+
+
+
+
+<%- include('partials/footer'); -%>
+

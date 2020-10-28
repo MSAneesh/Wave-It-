@@ -1,0 +1,6 @@
+<h5 class="card-title">Card title</h5>
+              <label for="function">Enter your function:</label>
+              <input type="text" id="function"><br>
+              <label for="Coeff">Enter the coeff:</label>
+              <input type="number"id="Coeff"><br>
+              <button style="left:40px;">Submit</button>
